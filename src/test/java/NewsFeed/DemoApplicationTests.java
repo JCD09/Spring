@@ -1,4 +1,4 @@
-package demo;
+package NewsFeed;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
