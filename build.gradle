@@ -9,6 +9,11 @@ group = 'com.example'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '1.8'
 
+jar {
+	baseName = 'newsfeed'
+	version =  '0.1.0'
+}
+
 repositories {
 	mavenCentral()
 	maven { url 'https://repo.spring.io/snapshot' }
@@ -24,3 +29,18 @@ dependencies {
 
 	compile group: 'org.projectlombok', name: 'lombok', version: '1.16.20'
 }
+
+task callEcho(type:Exec) {
+	doLast {
+		commandLine 'ls'
+	}
+}
+
+
+
+
+apply plugin: 'application'
+
+mainClassName = 'NewsFeed.NewsFeedMain'
+
+

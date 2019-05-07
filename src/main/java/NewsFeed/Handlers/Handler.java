@@ -35,7 +35,8 @@ public class Handler {
     }
 
     public Mono<ServerResponse> redirect(ServerRequest serverRequest){
-        return ServerResponse.permanentRedirect(URI.create("/login.html")).build();
+        System.out.println("printing redirect");
+        return ServerResponse.permanentRedirect(URI.create("/app/index.html")).build();
 
     }
 }
