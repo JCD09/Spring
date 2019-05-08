@@ -1,7 +1,18 @@
 HELP.md
-.gradle
+/.gradle/
+/.cache/
 /build/
+/classes/
 !gradle/wrapper/gradle-wrapper.jar
+
+/npm-app/node_modules
+/npm-app/.gradle
+/npm-app/.cache
+/npm-app/dist
+/npm-app/build
+
+/java-app/build/
+/java-app/.cache/
 
 ### STS ###
 .apt_generated

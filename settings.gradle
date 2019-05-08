@@ -12,4 +12,6 @@ pluginManagement {
 		}
 	}
 }
-rootProject.name = 'NewsFeed'
+rootProject.name = 'Spring'
+include 'npm-app'
+include 'java-app'
