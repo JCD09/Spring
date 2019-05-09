@@ -1,3 +1,10 @@
-subprojects {
-    apply from: file("$rootProject.rootDir/stage.gradle")
+project(':java-app'){
+    apply plugin: 'java'
+    dependencies{
+        compile project(':npm-app')
+    }
 }
+
+//subprojects {
+//    apply from: file("$rootProject.rootDir/stage.gradle")
+//}
