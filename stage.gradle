@@ -1,8 +1,8 @@
 task stage
-task copyLib(type: Copy){
-    from "$rootProject/java-app/build/libs"
-    into "$rootProject.buildDir/libs"
-}
-copyLib.dependsOn(stage)
+//task copyLib(type: Copy){
+//    from "$rootProject/java-app/build/libs"
+//    into "$rootProject.buildDir/libs"
+//}
+//copyLib.dependsOn(stage)
 
 

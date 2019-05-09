@@ -5,6 +5,6 @@ project(':java-app'){
     }
 }
 
-//subprojects {
-//    apply from: file("$rootProject.rootDir/stage.gradle")
-//}
+subprojects {
+    apply from: file("$rootProject.rootDir/stage.gradle")
+}
