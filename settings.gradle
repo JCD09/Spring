@@ -13,5 +13,5 @@ pluginManagement {
 	}
 }
 rootProject.name = 'Spring'
-include 'npm-app'
+include 'node-app'
 include 'java-app'

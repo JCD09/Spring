@@ -1,10 +1,6 @@
-project(':java-app'){
-    apply plugin: 'java'
-    dependencies{
-        compile project(':npm-app')
-    }
+task build{
+    dependsOn(':node-app:npmRunBuild')
 }
-
 subprojects {
     apply from: file("$rootProject.rootDir/stage.gradle")
 }

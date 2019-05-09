@@ -31,8 +31,8 @@ task copyToJar(type: Copy, dependsOn: 'clearAppFolder' ){
     from("dist")
     into("../java-app/src/main/resources/app")
 }
-assemble.dependsOn(copyToJar)
-
+//assemble.dependsOn(copyToJar)
+//
 
 
 

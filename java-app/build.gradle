@@ -1,17 +1,28 @@
 plugins {
 	id 'org.springframework.boot' version '2.2.0.M2'
-	id 'java'
+	id "io.spring.dependency-management" version "1.0.6.RELEASE"
+	id 'application'
 }
 
-apply plugin: 'io.spring.dependency-management'
+bootJar{
+	doFirst {
+		delete("${project.project(':java-app').projectDir}/src/main/resources/app")
+		mkdir("${project.project(':java-app').projectDir}/src/main/resources/app")
+		copy{
+			from("${project.project(':node-app').projectDir}/dist")
+			into("${project.project(':java-app').projectDir}/src/main/resources/app")
+		}
+	}
+	doLast {
+		copy{
+			from("${project.project(':java-app').buildDir}/libs/java-app.jar")
+			into("${rootDir}")
+		}
+	}
+}
 
 sourceCompatibility = '1.8'
-
-jar {
-	baseName = 'newsfeed'
-//	version =  '0.0.1'
-	into("$rootProject.buildDir")
-}
+mainClassName = 'NewsFeed.NewsFeedMain'
 
 repositories {
 	mavenCentral()
@@ -28,9 +39,4 @@ dependencies {
 
 	compile group: 'org.projectlombok', name: 'lombok', version: '1.16.20'
 }
-
-apply plugin: 'application'
-
-mainClassName = 'NewsFeed.NewsFeedMain'
-
 

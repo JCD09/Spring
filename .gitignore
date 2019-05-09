@@ -5,11 +5,13 @@ HELP.md
 /classes/
 !gradle/wrapper/gradle-wrapper.jar
 
+/npm-app/
 /npm-app/node_modules
 /npm-app/.gradle
 /npm-app/.cache
 /npm-app/dist
 /npm-app/build
+
 
 /java-app/build/
 /java-app/.cache/
