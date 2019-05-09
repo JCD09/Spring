@@ -1,6 +1,6 @@
 HELP.md
 /.gradle/
-/.cache/
+.cache
 /build/
 /classes/
 !gradle/wrapper/gradle-wrapper.jar
