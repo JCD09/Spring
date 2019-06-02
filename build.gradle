@@ -1,6 +1,7 @@
 task build{
-    dependsOn(':node-app:npmRunBuild')
+//     dependsOn(':node-app:npmRunBuild')
+    dependsOn(':npm-app:npmRunBuild')
 }
-subprojects {
-    apply from: file("$rootProject.rootDir/stage.gradle")
-}
+//subprojects {
+//    apply from: file("$rootProject.rootDir/stage.gradle")
+//}

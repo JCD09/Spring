@@ -9,7 +9,7 @@ bootJar{
 		delete("${project.project(':java-app').projectDir}/src/main/resources/app")
 		mkdir("${project.project(':java-app').projectDir}/src/main/resources/app")
 		copy{
-			from("${project.project(':node-app').projectDir}/dist")
+			from("${project.project(':npm-app').projectDir}/dist")
 			into("${project.project(':java-app').projectDir}/src/main/resources/app")
 		}
 	}

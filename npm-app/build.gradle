@@ -1,39 +1,35 @@
 plugins {
-    id "com.moowork.node" version "1.3.1"
+    id "com.liferay.node" version "4.6.15"
 }
 
-apply plugin: 'com.moowork.node' // gradle-node-plugin
-apply plugin: 'base'
-
 node {
-    version = '8.15.1'
-    npmVersion = '6.4.1'
+    version = '10.15.3'
+    npmVersion = '6.8.0'
     download = false
-    distBaseUrl = 'https://nodejs.org/dist'
 
 //    workDir = file("${project.buildDir}/node")
 //    npmWorkDir = file("${project.buildDir}/npm")
 //    nodeModulesDir = file("${project.projectDir}")
 }
 
-task empty(type: Delete){
-    delete 'dist'
-}
-task buildPackage(type: NpmTask, dependsOn: 'empty') {
-    args = ['run', 'build-staging']
-}
-
-task clearAppFolder(type:Delete, dependsOn: 'buildPackage'){
-    delete fileTree("../java-app/src/main/resources/app").matching {
-    }
-}
-task copyToJar(type: Copy, dependsOn: 'clearAppFolder' ){
-    from("dist")
-    into("../java-app/src/main/resources/app")
-}
+//
+//task clearAppFolder(type:Delete, dependsOn: 'buildPackage'){
+//    delete fileTree("../java-app/src/main/resources/app").matching {
+//    }
+//}
+//task copyToJar(type: Copy, dependsOn: 'clearAppFolder' ){
+//    from("dist")
+//    into("../java-app/src/main/resources/app")
+//}
 //assemble.dependsOn(copyToJar)
 //
 
+npmRunClean.mustRunAfter(npmInstall)
+npmRunBuild.mustRunAfter(npmRunClean)
+//task runTasks{
+//    npmRunClean
+//    npmRunBuild
+//}
 
 
 

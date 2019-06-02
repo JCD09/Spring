@@ -1,16 +1,17 @@
 HELP.md
 /.gradle/
-.cache
+/.cache/
 /build/
 /classes/
 !gradle/wrapper/gradle-wrapper.jar
 
 /npm-app/
-/npm-app/node_modules
-/npm-app/.gradle
-/npm-app/.cache
-/npm-app/dist
-/npm-app/build
+
+/node-app/node_modules/
+/node-app/.gradle/
+/node-app/.cache/
+!/node-app/dist/
+/node-app/build/
 
 
 /java-app/build/
