@@ -24,14 +24,11 @@ node {
 //assemble.dependsOn(copyToJar)
 //
 
-npmRunClean.mustRunAfter(npmInstall)
-npmRunBuild.mustRunAfter(npmRunClean)
+npmRunClean.dependsOn(npmInstall)
+npmRunTest.dependsOn(npmRunClean)
+npmRunBuild.dependsOn(npmRunTest)
+
 //task runTasks{
 //    npmRunClean
 //    npmRunBuild
 //}
-
-
-
-
-

@@ -2,20 +2,39 @@
   "alias": {
     "vue": "./node_modules/vue/dist/vue.common.js"
   },
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "vue"
+    ],
+    "transform": {
+      ".*\\.(vue)$": "vue-jest",
+      "^.+\\.js$": "<rootDir>/node_modules/babel-jest"
+    }
+  },
   "dependencies": {
+    "babel-jest": "^24.8.0",
+    "parcel-bundler": "^1.12.3",
     "vue": "^2.6.10",
     "vue-hot-reload-api": "^2.3.3",
-    "parcel-bundler": "^1.12.3"
+    "vuex": "^3.1.1"
   },
   "devDependencies": {
+    "babel-core": "^7.0.0-bridge.0",
+    "@babel/preset-env": "^7.4.5",
     "@vue/component-compiler-utils": "^3.0.0",
+    "@vue/test-utils": "^1.0.0-beta.29",
     "cssnano": "^4.1.10",
+    "jest": "^24.8.0",
+    "jest-serializer-vue": "^2.0.2",
+    "vue-jest": "^3.0.4",
     "vue-template-compiler": "^2.6.10"
   },
   "scripts": {
+    "serve": "parcel src/index.html",
     "clean": "rm -r dist && mkdir dist",
-    "watch": "parcel watch src/index.html",
     "build": "npx parcel build src/index.html --public-url ./",
-    "build-staging": "npx parcel build src/index.html --public-url ./"
+    "test": "npx jest"
   }
 }
